@@ -1,0 +1,10 @@
+[{
+	"preview": "/test/images/previews/image1.png",
+	"full": "/test/images/full/image1.png"
+}, {
+	"preview": "/test/images/previews/image2.png",
+	"full": "/test/images/full/image2.png"
+}, {
+	"preview": "/test/images/previews/image3.png",
+	"full": "/test/images/full/image3.png"
+}]

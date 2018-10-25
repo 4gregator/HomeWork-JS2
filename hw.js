@@ -1,107 +1,35 @@
-"use strict";
+var glrURL = "http://localhost/test/json/gallery.json",
+	statusURL = "http://localhost/test/json/error.json",
+	gallery = document.getElementsByClassName("gallery");
 
-var config = [{
-	href: '/',
-	name: "Главная"
-}, {
-	href: '/catalog',
-	name: "Каталог"
-}, {
-	href: '/gallery',
-	name: "Галерея",
-	items: [{
-			href: '/1',
-			name: "Фото 1"
-		}, {
-			href: '/2',
-			name: "Фото 2"
-		}],
-}, {
-	href: '/portfolio',
-	name: "Портфолио",
-	items: [{
-			href: '/1',
-			name: "Работа 1"
-		}, {
-			href: '/2',
-			name: "Работа 2"
-		}, {
-			href: '/3',
-			name: "Работа 3"
-		}],
-}, {
-	href: '/contacts',
-	name: "Контакты"
-}];
+var xhr = new XMLHttpRequest();
+xhr.open('GET', glrURL);
+xhr.send();
 
-class Container {
-	remove(){
-		document.getElementById(this.id).remove();
-	}
-};
+xhr.onreadystatechange = function(){
+	if (xhr.readyState == 4) {
+		if (xhr.status == 200) {
+			let result = JSON.parse(xhr.responseText);
+			statusURL = "http://localhost/test/json/success.json";
 
-class Menu extends Container {
-	constructor(id, config){
-		super();
-		this.id = id;
-		this.items = [];
-		this.createItems(config);
-	}
-	createItems(config){
-		let j = 1;
-		for (let i = 0; i < config.length; i++) {
-			this.items.push(new MenuItem(config[i].href, config[i].name));
-			if ('items' in config[i]) {
-				this.items.push( new SubMenu("sub-menu-" + j++, config[i].items).create() );
+			for (let i = 0; i < gallery.length; i++) {
+				gallery[i].src = result[i].preview;
+				gallery[i].addEventListener('click', function(){
+					this.src = (this.src != "http://localhost" + result[i].full) ? result[i].full : result[i].preview;
+				});
 			}
 		}
 	}
-	create(){
-		document.write(this.render());
-	}
-	render(){
-		let result = '<ul id="' + this.id + '">';
+	let check = new XMLHttpRequest();
+	check.open('GET', statusURL);
+	check.send();
 
-		for (let i = 0; i < this.items.length; i++) {
-			result += typeof this.items[i] === "object" ? this.items[i].render() : this.items[i];
+	check.onreadystatechange = function(){
+		if (check.readyState == 4) {
+			if (check.status == 200) {
+				let result = JSON.parse(check.responseText);
+				console.log(result.result);
+			}
 		}
-
-		result += '</ul>';
-		return result;
-	}
+	};
 };
-
-class SubMenu extends Menu {
-	createItems(config){
-		for (let i = 0; i < config.length; i++) {
-			this.items.push(new MenuItem(config[i].href, config[i].name));
-		}
-	}
-	create(){
-		return this.render();
-	}
-	render(){
-		let result = '<ul id="' + this.id + '">';
-
-		for (let i = 0; i < this.items.length; i++) {
-			result += this.items[i].render();
-		}
-
-		result += '</ul>';
-		return result;
-	}
-};
-
-class MenuItem extends Container {
-	constructor(href, name){
-		super();
-		this.href = href;
-		this.name = name;
-	}
-	render(){
-		return '<li><a href="' + this.href + '">' + this.name + '</a></li>';
-	}
-};
-
-let menu = new Menu("main-menu", config);
-menu.create();
