@@ -1,0 +1,14 @@
+{"comments": [{
+	"id_comment": "1",
+	"username": "Vasya",
+	"text": "Ya zdes'"
+}, {
+	"id_comment": "2",
+	"username": "Petya",
+	"text": "Ya tam"
+}, {
+	"id_comment": "3",
+	"username": "Kolya",
+	"text": "Ya vsegda"
+}],
+"result": "1"}
