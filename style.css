@@ -1,0 +1,71 @@
+#autoField {
+	display: inline-block;
+	position: relative;
+}
+
+#options {
+	position: absolute;
+}
+
+.option {
+	cursor: pointer;
+}
+
+.option:hover {
+	background: #f6fbfb;
+}
+
+.controlContainer {
+	list-style-type: none;
+	display: flex;
+	margin: 20px 0 0;
+	padding: 0;
+}
+
+.control {
+	padding: 5px;
+	border: 2px solid green;
+	cursor: pointer;
+	background: lightgreen;
+	transition-duration: 1s;
+}
+
+.control:hover {
+	background: #e6eca8;
+}
+
+.control.active {
+	background: white;
+	border-width: 2px 2px 0;
+}
+
+.content {
+	width: 364px;
+	display: none;
+	border: solid green;
+	border-width: 0 2px 2px;
+}
+
+.content.active {
+	display: block;
+}
+
+.wrap_jcarousel {
+	width: 600px;
+	margin: 10px auto;
+	position: relative;
+}
+
+.jcarousel {
+	position: relative;
+	overflow: hidden;
+}
+
+.jcarousel ul {
+	width: 20000em;
+	position: relative;
+}
+
+.jcarousel ul li {
+	float: left;
+}
