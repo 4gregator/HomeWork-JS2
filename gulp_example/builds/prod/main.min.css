@@ -1,0 +1,172 @@
+button {
+  cursor: pointer;
+}
+#start {
+  position: absolute;
+}
+#dialog {
+  position: absolute;
+  top: 44px;
+  left: 44px;
+  border: solid 1px;
+  border-radius: 4px;
+  background-color: #bfdab7;
+  z-index: 2;
+  display: none;
+}
+.TheGame {
+  width: 100%;
+  height: 1000px;
+}
+#playField {
+  position: relative;
+  margin: auto;
+  border: solid 1px;
+  border-radius: 8px;
+  background-color: #cff6ff;
+  width: 1000px;
+  height: 500px;
+}
+.dices {
+  width: 44px;
+  height: 44px;
+}
+#windDice {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+#infoPanel {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+#compas {
+  width: 100px;
+  height: 100px;
+  display: none;
+  position: absolute;
+  top: 200px;
+  left: 50px;
+}
+#compas > img:first-child {
+  width: inherit;
+  height: inherit;
+}
+#controlPanel {
+  position: absolute;
+  left: 20px;
+  top: 380px;
+  display: none;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 33px);
+  grid-column-gap: 2px;
+}
+#grapple {
+  height: 99px;
+  margin: 0;
+  padding: 0;
+  grid-area: 0.1;
+}
+#grapple > img {
+  width: 96px;
+  height: 95px;
+}
+#fire {
+  height: 66px;
+  grid-area: 0.05555556;
+}
+#move {
+  grid-area: 0.125;
+}
+.moveControl {
+  height: auto;
+}
+.moveControl,
+#grapple,
+#fire {
+  cursor: pointer;
+}
+.moveControl:disabled,
+#grapple:disabled,
+#fire:disabled {
+  opacity: 0.5;
+}
+/* положение кораблей */
+.ship {
+  width: 143px;
+  height: 200px;
+  position: relative;
+}
+#plrShip,
+#oppShip {
+  display: none;
+  position: absolute;
+  left: 460px;
+}
+#plrShip {
+  top: 300px;
+}
+.eva,
+.top,
+.right,
+.bottom,
+.left {
+  position: absolute;
+}
+/* страты в руке */
+#hand {
+  position: relative;
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin-left: 700px;
+  margin-top: 240px;
+}
+#showStrata {
+  position: absolute;
+  top: -25px;
+  left: 62px;
+  display: none;
+}
+.strata {
+  width: 89px;
+  height: 124px;
+  margin-right: 11px;
+  display: none;
+}
+#strataCarousel {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background: #afb8b9;
+  z-index: 3;
+}
+.arrows {
+  width: 90px;
+  height: 72px;
+  cursor: pointer;
+  transition-duration: 400ms;
+}
+.arrows:active {
+  transform: rotate(-15deg);
+}
+.arrows ~ .arrows:active {
+  transform: rotate(15deg);
+}
+#strataView {
+  height: 475px;
+  margin: 0 25px 25px;
+}
+#closeCarousel {
+  position: absolute;
+  bottom: 2px;
+}
+#portretOpp {
+  display: none;
+}
+#portretOpp {
+  height: 300px;
+}

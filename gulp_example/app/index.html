@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Salt&Gunpowder</title>
+	<!-- build:css -->
+	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/temp.css">
+	<!-- endbuild -->
+</head>
+<body>
+	<div class="TheGame">
+		<div id="playField">
+			<div id="start">
+				<h1>Соль и Порох</h1>
+				<p>Что ещё за пресноводных моллюсков притащило, разрази меня гром!</p>
+				<p>Фок-грот-брамсель мне в левое ухо! <a href="#" id="play">Хочешь сразиться?!</a></p>
+				<p>Абордажный лом с хреном во все дыры 333 раза, потный пожиратель рыбьих потрахов, мать твоя каракатица! Не знаешь правил? <a target="_blank" href="https://docs.google.com/document/d/1xIHwk_uyjYohFfWKrQc7R_zq5hKQj2Ixg6xvBJBflx8/edit?usp=sharing">Жми сюда!</a></p>
+			</div>
+			<div id="dialog">
+				<p>Укажите свой пол</p>
+				<button id="male" class="gender" type="button">Муж</button>
+				<button id="female" class="gender" type="button">Жен</button>
+			</div>
+			<div id="infoPanel"></div>
+			<div id="compas">
+				<img src="images/wind.jpg" alt="compas">
+			</div>
+			<div id="controlPanel">
+				<button id="grapple" type="button" disabled="disabled"><img src="images/close.jpg"></button>
+				<button id="fire" type="button" disabled="disabled">орудия к бою!</button>
+				<button id="move" class="moveControl" type="button" disabled="disabled"></button>
+				<button id="turnLeft" class="moveControl" type="button" disabled="disabled"></button>
+				<button id="turnRight" class="moveControl" type="button" disabled="disabled"></button>
+				<button id="turnAround" class="moveControl" type="button" disabled="disabled"></button>
+			</div>
+			<div id="plrShip">
+				<img src="#" alt="ship" class="ship">
+			</div>
+			<div id="oppShip">
+				<img src="#" alt="ship" class="ship">
+			</div>
+			<div id="hand">
+				<button id="showStrata" type="button">Посмотреть стратагемы</button>
+				<img src="#" alt="stratagema" class="strata">
+				<img src="#" alt="stratagema" class="strata">
+				<img src="#" alt="stratagema" class="strata">
+				<img src="#" alt="stratagema" class="strata">
+				<img src="#" alt="stratagema" class="strata">
+				<img src="#" alt="stratagema" class="strata">
+			</div>
+		</div>
+		<img src="#" alt="portret" title="Computer" id="portretOpp">
+	</div>
+	<!-- buld:js -->
+	<script src="scripts/oop.js"></script>
+	<script src="scripts/stratas.js"></script>
+	<script src="scripts/carousel.js"></script>
+	<!-- endbuild -->
+</body>
+</html>
